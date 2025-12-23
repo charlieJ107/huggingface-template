@@ -13,3 +13,5 @@ wheels/
 .env.local
 
 !.gitkeep
+
+uv.lock

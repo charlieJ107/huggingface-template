@@ -5,15 +5,17 @@ channels:
   - defaults
 dependencies:
   - python=3.12
-  - matplotlib
-  - transformers
-  - accelerate
-  - nltk
-  - datasets
-  - peft
-  - jupyter
-  - flash-attn
-  - pytorch
-  - toml
-  - seaborn
+  - matplotlib=3.10.8
+  - transformers=5.0.0rc1
+  - accelerate=1.8.0
+  - datasets=4.4.2
+  - nltk=3.8.1
+  - diffusers=0.36.0
+  - ipywidgets=8.1.8
+  - peft=0.18.0
+  - jupyter=1.1.1
+  - flash-attn=2.8.5
+  - pytorch=2.9.1
+  - toml=0.10.2
+  - seaborn=0.12.3
 prefix: .conda

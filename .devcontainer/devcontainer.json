@@ -1,7 +1,7 @@
 // For format details, see https://aka.ms/devcontainer.json. For config options, see the
 // README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
 {
-	"name": "my-awesome-project",
+	"name": "my-awesome-model",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
 	"build": {
 		"dockerfile": "Dockerfile"
@@ -13,8 +13,7 @@
 	},
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
-		"ghcr.io/va-h/devcontainers-features/uv:1": {
-			"shellautocompletion": true,
+		"ghcr.io/devcontainers-extra/features/uv:1": {
 			"version": "latest"
 		},
 		"ghcr.io/devcontainers/features/conda:1": {
@@ -24,9 +23,28 @@
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "uv sync"
+	"postCreateCommand": "uv sync",
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"tamasfe.even-better-toml",
+				"ms-python.autopep8",
+				"njpwerner.autodocstring",
+				"GitHub.copilot",
+				"ms-python.isort",
+				"redhat.vscode-yaml"
+			]
+		}
+	},
+	"containerEnv": {
+		"PYTHONPATH": "${containerWorkspaceFolder}",
+		"TOKENIZERS_PARALLELISM": "false"
+	},
 	// Configure tool-specific properties.
 	// "customizations": {},
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
-	// "remoteUser": "vscode"
+	"remoteUser": "vscode",
+	"containerUser": "vscode"
 }
